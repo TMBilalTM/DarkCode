@@ -137,6 +137,33 @@ print(f"Sum of numbers: {numbers_sum}")`,
   }
 }`,
   },
+  php: {
+    id: "php",
+    label: "PHP",
+    logoPath: "/php.png",
+    pistonRuntime: { language: "php", version: "8" },
+    monacoLanguage: "php",
+    defaultCode: ` <?php
+  // Create array
+  $numbers = [1, 2, 3, 4, 5];
+
+  // Print original numbers
+  echo "Original numbers: " . implode(" ", $numbers) . "\n";
+
+  // Calculate squares
+  $squares = array_map(fn($n) => $n * $n, $numbers);
+  echo "Squared numbers: " . implode(" ", $squares) . "\n";
+
+  // Filter even numbers
+  $evenNumbers = array_filter($numbers, fn($n) => $n % 2 == 0);
+  echo "Even numbers: " . implode(" ", $evenNumbers) . "\n";
+
+  // Calculate sum
+  $sum = array_sum($numbers);
+  echo "Sum of numbers: $sum\n";
+  ?>`,
+
+  },
   go: {
     id: "go",
     label: "Go",
@@ -153,7 +180,7 @@ func main() {
   
   // Print original numbers
   fmt.Println("Original numbers:", numbers)
-  
+
   // Calculate squares
   squares := make([]int, len(numbers))
   for i, n := range numbers {
